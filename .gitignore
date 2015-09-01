@@ -1,0 +1,10 @@
+# Python 
+*.pyc
+
+# Idea
+.idea
+
+# Mac sheet
+.DS_Store
+
+
