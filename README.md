@@ -9,7 +9,6 @@ Example of REST Api with users
 ## API description :
 
 The api stores photos/comments that authenticated users can upload to the api.
-
 #### Any user can request all images
     (GET) <URL>/api/photo/
 
@@ -48,5 +47,6 @@ The response looks like :
 
 
 
+On OAuth2 :
 
-
+http://www.slideshare.net/aaronpk/an-introduction-to-oauth2?related=1

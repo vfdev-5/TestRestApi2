@@ -121,10 +121,24 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'oauth2_provider.ext.rest_framework.OAuth2Authentication',
         'rest_framework_social_oauth2.authentication.SocialAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     )
 }
 
 AUTHENTICATION_BACKENDS = (
-   'rest_framework_social_oauth2.backends.DjangoOAuth2',
-   'django.contrib.auth.backends.ModelBackend',
+
+    # Github OAuth2
+    'social.backends.github.GithubOAuth2',
+
+    # Google
+    'social.backends.google.GoogleOAuth2',
+
+    'rest_framework_social_oauth2.backends.DjangoOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
 )
+
+# Github configuration
+SOCIAL_AUTH_GITHUB_KEY = 'fc50c6480dd3b20af1c1'
+SOCIAL_AUTH_GITHUB_SECRET = '90e0a78cc879db6247b36d6bb14274e9e927d1a0'
