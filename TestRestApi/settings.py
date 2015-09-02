@@ -117,6 +117,9 @@ print "MEDIA_ROOT : ", MEDIA_ROOT
 MEDIA_URL = 'media/'
 
 
+# Redirection after successful login:
+LOGIN_REDIRECT_URL = ('/api/')
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'oauth2_provider.ext.rest_framework.OAuth2Authentication',
@@ -140,5 +143,6 @@ AUTHENTICATION_BACKENDS = (
 )
 
 # Github configuration
-SOCIAL_AUTH_GITHUB_KEY = 'fc50c6480dd3b20af1c1'
-SOCIAL_AUTH_GITHUB_SECRET = '90e0a78cc879db6247b36d6bb14274e9e927d1a0'
+SOCIAL_AUTH_GITHUB_KEY = '60e20e4fc40bf3e0f4a0'
+SOCIAL_AUTH_GITHUB_SECRET = 'd8f80f807f7c0ae0367378113272bc32e33cae7a'
+SOCIAL_AUTH_GITHUB_SCOPE = ['email',]
