@@ -46,7 +46,27 @@ The response looks like :
          <URL>/api/comment/
 
 
-
+### Useful info
 On OAuth2 :
 
-http://www.slideshare.net/aaronpk/an-introduction-to-oauth2?related=1
+<a href="http://www.slideshare.net/aaronpk/an-introduction-to-oauth2?related=1">aaronpk : an-introduction-to-oauth2</a>
+
+In case of
+<a href="http://stackoverflow.com/questions/24377506/httperror-403-forbidden-with-django-and-python-social-auth-connecting-to-googl">HTTPError 403 (Forbidden) with Django and python-social-auth connecting to Google with OAuth2</a>
+
+Catch AuthCanceled exception :
+http://stackoverflow.com/questions/20907276/python-social-auth-authcanceled-exception
+
+
+### TODO
+
+- OK = Login as github/google user using a link from test html
+- OK = Logout user using a link from test html
+- OK = Display Login/Logout options on the test html
+- Convert 3rd party token to my Api token
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+{% load backend_utils %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<h2>This is the web application html</h2>
+
+<!--<img src="/media/another_waste_photo.jpeg" />-->
+
+{% if user.is_authenticated %}
+
+    <div>
+        You are logged in as <code>{{ user.username }}</code>!
+    </div>
+
+    <a href="{% url 'logout' %}">Logout</a>
+
+
+{% else %}
+
+    {% for backend_set in available_backends|social_backends %}
+        {% for name, backend in backend_set %}
+            <div>
+                <a href="{% url 'social:begin' backend=name %}?next={{ request.path }}">Login with {{ backend|backend_name }}</a>
+            </div>
+        {% endfor %}
+    {% endfor %}
+{% endif %}
+
+
+<p> User : {{ request.user }} </p>
+
+{% if user.is_authenticated %}
+<p>3rd party Access token : </p>
+{% endif%}
+
+
+
+</body>
+</html>

@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'rest_framework_social_oauth2',
 
     'RestApi',
+    'WebSite',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -116,10 +117,6 @@ print "MEDIA_ROOT : ", MEDIA_ROOT
 
 MEDIA_URL = 'media/'
 
-
-# Redirection after successful login:
-LOGIN_REDIRECT_URL = ('/api/')
-
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'oauth2_provider.ext.rest_framework.OAuth2Authentication',
@@ -138,11 +135,13 @@ AUTHENTICATION_BACKENDS = (
     # Google
     'social.backends.google.GoogleOAuth2',
 
-    'rest_framework_social_oauth2.backends.DjangoOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
 
 # Github configuration
 SOCIAL_AUTH_GITHUB_KEY = '60e20e4fc40bf3e0f4a0'
 SOCIAL_AUTH_GITHUB_SECRET = 'd8f80f807f7c0ae0367378113272bc32e33cae7a'
-SOCIAL_AUTH_GITHUB_SCOPE = ['email',]
+# SOCIAL_AUTH_GITHUB_SCOPE = []
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '737283845948-up13jdflkjg535f54j9o1u8t62mmqhlq.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'cP3Kuj2j4hRFBY42uTpOeYFy'

@@ -7,9 +7,8 @@ from RestApi.views import PhotoList, PhotoDetail, CommentList
 from RestApi.views import UserDetail, UserList, TestView
 
 urlpatterns = [
-    url(r'^$', TestView.index, name='test'),
+    url(r'^$', TestView.index, name='api'),
 
-    # url(r'^auth-client-info/', ClientInfo.as_view(), name='client-info'),
     url(r'^auth/', include('rest_framework_social_oauth2.urls')),
 
     url(r'^comment/$', CommentList.as_view(), name='comment-list'),
