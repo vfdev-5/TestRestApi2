@@ -1,8 +1,5 @@
 from django.conf.urls import url, include
 
-from rest_framework.authtoken import views
-
-# from RestApi.views import ClientInfo
 from RestApi.views import PhotoList, PhotoDetail, CommentList
 from RestApi.views import UserDetail, UserList, TestView
 

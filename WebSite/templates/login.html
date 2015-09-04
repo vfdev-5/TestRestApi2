@@ -1,0 +1,32 @@
+{% load backend_utils %}
+<div class="jumbotron" id="login-panel">
+    <h2>Login directly or with a social network account</h2>
+    <hr>
+    <div class="row">
+
+        {% comment %}
+        <div class="col-sm-6">
+            {% include 'signin.html'%}
+        </div>
+        {% endcomment %}
+
+        <div class="col-sm-6">
+            {% for backend_set in available_backends|social_backends %}
+            <!--<div class="row">-->
+                <!--<div class="col-sm-4">-->
+                {% for name, backend in backend_set %}
+                <!--<a href="{% url 'social:begin' backend=name %}?next={{ request.path }}">Login with {{ backend|backend_name }}</a>-->
+                <a href="{% url 'social:begin' backend=name %}?next={{ request.path }}">
+                    <div class="{{backend|backend_name | lower}}-login"></div>
+                </a>
+                {% endfor %}
+                <!--</div>-->
+            <!--</div>-->
+            {% endfor %}
+        </div>
+
+
+    </div>
+</div>
+
+

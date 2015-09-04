@@ -13,8 +13,9 @@ name_re = re.compile(r'([^O])Auth')
 @register.filter
 def backend_name(backend):
     name = backend.__class__.__name__
-    name = name.replace('OAuth', ' OAuth')
-    name = name.replace('OpenId', ' OpenId')
+    name = name.replace('OAuth2', '')
+    name = name.replace('OAuth', '')
+    name = name.replace('OpenId', '')
     name = name.replace('Sandbox', '')
     name = name_re.sub(r'\1 Auth', name)
     return name
