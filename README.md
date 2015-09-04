@@ -59,11 +59,17 @@ http://stackoverflow.com/questions/20907276/python-social-auth-authcanceled-exce
 
 
 ### TODO
+03/09/2015
 
 - OK = Login as github/google user using a link from test html
 - OK = Logout user using a link from test html
 - OK = Display Login/Logout options on the test html
-- Convert 3rd party token to my Api token
+- OK = Convert 3rd party token to my Api token
+
+04/09/2015
+Client side :
+- Obtain user details from 3rd party social oauth resource using AJAX
+- Convert tokens using AJAX 
 
 
 

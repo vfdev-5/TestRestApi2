@@ -13,27 +13,29 @@ $('.inner-link').click(function(){
     return false;
 });
 
-// ------------------------
+// -----------------------
 //  Convert tokens
 // -----------------------
 
+// -----------------------
+//  Get user info
+// -----------------------
 
 
-// ------------------------
+// -----------------------
 //  Get comments
 // -----------------------
 
 $(document).ready (function() {
 
     console.log("Get comments");
-
     $.get( "api/comment/", {}
     )
     .done(function(data) {
 
-        var commentsDiv = document.getElementById('comments');
+        var comments_div = document.getElementById('comments');
         for (item in data) {
-            commentsDiv.insertAdjacentHTML('afterbegin',
+            comments_div.insertAdjacentHTML('afterbegin',
                 '<div id="comment-'+ data[item]['id'] + '">' +
                     '<span>' +
                     data[item]['owner'] +
@@ -65,14 +67,14 @@ $('#comment-submit').click(function() {
 
     console.log("Submit comment");
 
-    var commentBody = document.getElementById("comment-body");
+    var comment_body = document.getElementById("comment-body");
 
-    console.log("Comment : " + commentBody.value);
+    console.log("Comment : " + comment_body.value);
 
     $.ajax({
         url: "api/comment/",
         method: "POST",
-        data: commentBody.value,
+        data: comment_body.value,
         beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", "Token ya29.4wEoJ-zR1bRwmiXWvimRm-wnr6NPJ48nz-GS4eqmVuGrAfsaGsyL5D9g_EGmMpYSJzzkIA ");
         }
